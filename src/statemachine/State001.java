@@ -2,17 +2,17 @@
 package statemachine;
 
 /**
- * Состояние автомата с чётным числом нулей и нечётным числом единиц
+ * Правило автомата, когда строка содержала чётное число нулей и нечётое число единиц
  * @author gavrilin
  */
 public class State001 implements State{
 
-    StateMachine stateMachine;
+    StateMachineContainsEven0Odd1 stateMachine;
  
     /**
      * @param stateMachine конечный автомат
      */
-    public State001(StateMachine stateMachine){
+    public State001(StateMachineContainsEven0Odd1 stateMachine){
         this.stateMachine = stateMachine;
     }
     

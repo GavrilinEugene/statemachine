@@ -4,30 +4,14 @@ package statemachine;
 import java.util.regex.Pattern;
 
 /**
- * Класс конченого автомата
+ * Базовый класс конечного автомата
+ * реализует обход по строке, проверки и вывод
  * @author gavrilin
  */
-public class StateMachine {
-
-    State state01;                      // 0-нечётно, 1 -нечётно
-    State state011;                     // 0-нечётно, 1 -чётно
-    State state001;                     // 0-чётно,   1 -нечётно
-    State state0011;                    // 0-чётно,   1 -чётно
-    
-    State currentState;                 // текущее состояние
-    State finalState;                   // заключительное состояние
-    
-    /**
-     * Инициализация состояний автомата
-     */
-    public StateMachine(){
-        state01 = new State01(this);
-        state011 = new State011(this);
-        state001 = new State001(this);
-        state0011 = new State0011(this);
-        currentState = state0011; 
-        finalState = state001;
-    }
+public class StateMachineBase{
+  
+    protected State currentState;                 // текущее правило
+    protected State finalState;                   // заключительное 
     
     /**
      * Изменить текущее состояние
@@ -36,35 +20,7 @@ public class StateMachine {
     public void setCurrentState(State state){
         this.currentState = state;
     }
-    
-    /**
-     * @return сосотояние 0-нечётно, 1 -нечётно
-     */
-    public State getState01(){
-        return state01;
-    }
-    
-    /**
-     * @return сосотояние 0-нечётно, 1 -чётно
-     */
-    public State getState011(){
-        return state011;
-    }
-
-    /**
-     * @return сосотояние 0-чётно,   1 -нечётно
-     */
-    public State getState001(){
-        return state001;
-    }
-
-    /**
-     * @return сосотояние 0-чётно,   1 -чётно
-     */
-    public State getState0011(){
-        return state0011;
-    }    
-    
+          
     /**
      * Основной метод автомата. Определение - удовлетворяет строка условию
      * или нет

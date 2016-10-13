@@ -21,14 +21,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * демо работы конечного автомата
+ * демо работы конечного автомата (с чётным числом нулей и оканчивающееся на 11)
  * @author gavrilin
  */
-public class StateMachineDemo {
+public class StateMachineDemo2 {
     
      public static void main(String[] args){
    
-        System.out.println("Provide your input for StateMachine");
+        System.out.println("Provide your input for StateMachine2");
         String inputLineString = null;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         
@@ -38,7 +38,7 @@ public class StateMachineDemo {
             System.err.println("IO error while trying to read your input");
         }
          
-        StateMachineContainsEven0Odd1 stateMachine = new StateMachineContainsEven0Odd1();
+        StateMachineContains00Lasts11 stateMachine = new StateMachineContains00Lasts11();
         stateMachine.parseStringInput(inputLineString);
     }
     
